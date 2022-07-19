@@ -1,0 +1,50 @@
+<div class="container">
+  <form [formGroup]="form" class="m-2" (ngSubmit)="login($event)">
+    <div class="mb-3">
+      <label for="email-form" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': email?.errors && email?.touched,
+          'is-valid': !email?.errors && email?.touched
+        }"
+        id="email-form"
+        aria-describedby="emailHelp"
+        formControlName="email"
+      />
+      <div *ngIf="email?.errors && email?.touched">
+        <p *ngIf="email?.hasError('required')" class="text-danger">
+          El E-mail es requerido.
+        </p>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password-form" class="form-label">Contraseña</label>
+      <input
+        type="password"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': password?.errors && password?.touched,
+          'is-valid': !password?.errors && password?.touched
+        }"
+        id="password-form"
+        aria-describedby="passwordHelp"
+        formControlName="password"
+      />
+      <div *ngIf="password?.errors && password?.touched">
+        <p *ngIf="password?.hasError('required')" class="text-danger">
+          La Contraseña es requerida.
+        </p>
+      </div>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [ngClass]="{ disabled: !loginButtonStatus }"
+    >
+      Logear
+    </button>
+    <span *ngIf="!loginButtonStatus">Enviando...</span>
+  </form>
+</div>
