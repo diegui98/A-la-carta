@@ -1,0 +1,9 @@
+ul {
+  list-style: none;
+}
+
+.menuExtraInfo {
+  border: 2px solid;
+  margin-bottom: 5px;
+  height: 25vh;
+}

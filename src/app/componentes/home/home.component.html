@@ -1,0 +1,60 @@
+<div class="container">
+  <h1>Restaurante A la carta!</h1>
+  <div class="row">
+    <div class="col-sm-9">
+      <button class="btn btn-success" (click)="addPlate()">
+        Agregar un Plato
+      </button>
+      <form
+        *ngIf="searchBtnStatus"
+        [formGroup]="form"
+        class="m-2"
+        (ngSubmit)="getPlateList($event)"
+      >
+        <div class="mb-3">
+          <label for="nombre-form" class="form-label">Nombre del Plato</label>
+          <input
+            type="text"
+            class="form-control"
+            [ngClass]="{
+              'is-invalid': nombre?.errors && nombre?.touched,
+              'is-valid': !nombre?.errors && nombre?.touched
+            }"
+            id="nombre-form"
+            aria-describedby="nombreHelp"
+            formControlName="nombre"
+          />
+          <div *ngIf="nombre?.errors && nombre?.touched">
+            <p *ngIf="nombre?.hasError('required')" class="text-danger">
+              El nombre del plato es requerido
+            </p>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar</button>
+      </form>
+      <ul *ngIf="searchRequested">
+        <app-plato></app-plato>
+      </ul>
+    </div>
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-12 menuExtraInfo">
+          <h4>Precio Total:</h4>
+          *menuPrecioTotal*
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 menuExtraInfo">
+          <h4>Tiempo De Preparacion:</h4>
+          *menuTiempoPreparacion*
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 menuExtraInfo">
+          <h4>Health Score:</h4>
+          *menuHealthScore*
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

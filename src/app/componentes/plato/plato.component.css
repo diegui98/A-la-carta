@@ -1,0 +1,13 @@
+.container {
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: #d1b242c7;
+}
+
+.btn {
+  margin-bottom: 2px;
+}
+
+.btn-danger {
+  margin-left: 8px;
+}

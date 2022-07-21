@@ -8,9 +8,18 @@ import { LoginComponent } from './componentes/login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { HomeComponent } from './componentes/home/home.component';
+import { PlatoComponent } from './componentes/plato/plato.component';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    PlatoComponent,
+    NavbarComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,

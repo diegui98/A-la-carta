@@ -1,0 +1,9 @@
+.login-col {
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: #d1b242c7;
+}
+
+.row {
+  place-content: center;
+}
