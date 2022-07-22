@@ -1,9 +1,16 @@
 <li>
   <div class="container">
-    <h3>Nombre del plato.</h3>
+    <h3>{{ defaultPlate.title }}</h3>
     <div *ngIf="showId == 1">
-      Imagen.
-      <p>Características del plato.</p>
+      {{ defaultPlate.images[0] }}
+      <h6>Ingredientes:</h6>
+      <p>{{ defaultPlate.breadcrumbs }}</p>
+      <h6>Información nutricional:</h6>
+      <ul>
+        <li>Calorias: {{ defaultPlate.nutrition.calories }}</li>
+        <li>Carbohidratos: {{ defaultPlate.nutrition.carbs }}</li>
+        <li>Grasas: {{ defaultPlate.nutrition.fat }}</li>
+      </ul>
     </div>
     <button class="btn btn-secondary" (click)="showDetails(1)">Detalle</button
     ><button class="btn btn-danger">Eliminar</button>

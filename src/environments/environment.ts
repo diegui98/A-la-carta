@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   alkemyURL: 'http://challenge-react.alkemy.org/',
+  apiKey: '7a03355e36cb4df3903706813d70d0e7',
 };
 
 /*

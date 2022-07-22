@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PlatoService } from 'src/app/servicios/plato.service';
 
 @Component({
   selector: 'app-plato',
@@ -7,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlatoComponent implements OnInit {
   showId!: number;
+  @Input() defaultPlate: any;
+  plateImg: any;
 
-  constructor() {}
+  constructor(private platoService: PlatoService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.platoService
+      .getPlateImgById(this.defaultPlate.id)
+      .subscribe((data) => {
+        this.plateImg = data;
+      });
+  }
 
   showDetails(id: number) {
     if (this.showId !== id) {

@@ -9,7 +9,7 @@
         *ngIf="searchBtnStatus"
         [formGroup]="form"
         class="m-2"
-        (ngSubmit)="getPlateList($event)"
+        (ngSubmit)="getPlateList()"
       >
         <div class="mb-3">
           <label for="nombre-form" class="form-label">Nombre del Plato</label>
@@ -32,8 +32,11 @@
         </div>
         <button type="submit" class="btn btn-primary">Agregar</button>
       </form>
-      <ul *ngIf="searchRequested">
-        <app-plato></app-plato>
+      <ul>
+        <app-plato
+          *ngFor="let defaultPlate of defaultPlates"
+          [defaultPlate]="defaultPlate"
+        ></app-plato>
       </ul>
     </div>
     <div class="col-sm-3">
