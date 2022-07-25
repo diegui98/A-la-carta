@@ -8,17 +8,15 @@ import { PlatoService } from 'src/app/servicios/plato.service';
 })
 export class PlatoComponent implements OnInit {
   showId!: number;
-  @Input() defaultPlate: any;
+  @Input() menuPlate: any;
   plateImg: any;
 
   constructor(private platoService: PlatoService) {}
 
   ngOnInit() {
-    this.platoService
-      .getPlateImgById(this.defaultPlate.id)
-      .subscribe((data) => {
-        this.plateImg = data;
-      });
+    this.platoService.getPlateImgById(this.menuPlate.id).subscribe((data) => {
+      this.plateImg = data;
+    });
   }
 
   showDetails(id: number) {

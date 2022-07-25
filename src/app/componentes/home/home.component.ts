@@ -11,9 +11,10 @@ import { environment } from 'src/environments/environment';
 })
 export class HomeComponent implements OnInit {
   plates: any;
-  defaultPlates: any = [];
+  menuPlates: any = [];
   searchBtnStatus: boolean = false;
   searchRequested: boolean = false;
+  selectedPlate!: number;
   form: FormGroup;
 
   constructor(
@@ -27,10 +28,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getDefaultPlates(392199);
-    this.getDefaultPlates(327954);
-    this.getDefaultPlates(387582);
-    this.getDefaultPlates(416185);
+    this.pushToMenuPlates(392199);
+    this.pushToMenuPlates(327954);
+    this.pushToMenuPlates(387582);
+    this.pushToMenuPlates(416185);
   }
 
   addPlate() {
@@ -41,7 +42,7 @@ export class HomeComponent implements OnInit {
     let parametros = {
       apiKey: environment.apiKey,
       query: this.nombre?.value,
-      number: '4',
+      number: '6',
     };
     this.menuService.getPlateList(parametros).subscribe(
       (data) => {
@@ -56,14 +57,22 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  getDefaultPlates(id: number) {
+  pushToMenuPlates(id: number) {
     let parametros = {
-      apiKey: '7a03355e36cb4df3903706813d70d0e7', //this.autenticacionService.getToken(),
+      apiKey: environment.apiKey,
     };
-    this.menuService.getDefaultPlates(id, parametros).subscribe((data) => {
-      this.defaultPlates.push(data);
+    this.menuService.getMenuPlates(id, parametros).subscribe((data) => {
+      this.menuPlates.push(data);
       console.log(data);
     });
+  }
+
+  setSelectedPlate(id: number) {
+    this.selectedPlate = id;
+  }
+
+  deletePlate(i: number) {
+    this.menuPlates = this.menuPlates.splice(i, 1);
   }
 
   get nombre() {

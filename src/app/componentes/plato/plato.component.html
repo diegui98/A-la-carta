@@ -1,18 +1,15 @@
-<li>
-  <div class="container">
-    <h3>{{ defaultPlate.title }}</h3>
-    <div *ngIf="showId == 1">
-      {{ defaultPlate.images[0] }}
-      <h6>Ingredientes:</h6>
-      <p>{{ defaultPlate.breadcrumbs }}</p>
-      <h6>Información nutricional:</h6>
-      <ul>
-        <li>Calorias: {{ defaultPlate.nutrition.calories }}</li>
-        <li>Carbohidratos: {{ defaultPlate.nutrition.carbs }}</li>
-        <li>Grasas: {{ defaultPlate.nutrition.fat }}</li>
-      </ul>
-    </div>
-    <button class="btn btn-secondary" (click)="showDetails(1)">Detalle</button
-    ><button class="btn btn-danger">Eliminar</button>
+<div class="container">
+  <h3>{{ menuPlate.title }}</h3>
+  <div *ngIf="showId == 1">
+    <img alt="Menu Img" [src]="menuPlate.image" />
+    <h6>Ingredientes:</h6>
+    <p>{{ menuPlate.breadcrumbs }}</p>
+    <h6>Información nutricional:</h6>
+    <ul>
+      <li>Calorias: {{ menuPlate.nutrition.calories }}</li>
+      <li>Carbohidratos: {{ menuPlate.nutrition.carbs }}</li>
+      <li>Grasas: {{ menuPlate.nutrition.fat }}</li>
+    </ul>
   </div>
-</li>
+  <button class="btn btn-secondary" (click)="showDetails(1)">Detalle</button>
+</div>

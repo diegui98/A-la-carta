@@ -14,7 +14,7 @@ export class MenuService {
     });
   }
 
-  public getDefaultPlates(id: any, parametros: any) {
+  public getMenuPlates(id: any, parametros: any) {
     return this.http.get('https://api.spoonacular.com/food/menuItems/' + id, {
       params: parametros,
     });
