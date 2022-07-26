@@ -2,6 +2,12 @@ ul {
   list-style: none;
 }
 
+.plato-li {
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: #d1b242c7;
+}
+
 .menuExtraInfo {
   border: 2px solid;
   margin-bottom: 5px;
@@ -9,5 +15,5 @@ ul {
 }
 
 .green-icon {
-  color: green
+  color: green;
 }

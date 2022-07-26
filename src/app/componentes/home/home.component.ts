@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
   }
 
   deletePlate(i: number) {
-    this.menuPlates = this.menuPlates.splice(i, 1);
+    this.menuPlates.splice(i, 1);
   }
 
   get nombre() {

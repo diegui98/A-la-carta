@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ALaCartaComponent } from './componentes/ALaCarta/ALaCarta.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { TokenGuard } from './servicios/token.guard';
 
 const routes: Routes = [
   {
@@ -10,7 +12,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent,
+    component: ALaCartaComponent,
+    canActivate: [TokenGuard],
   },
 ];
 

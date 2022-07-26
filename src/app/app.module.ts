@@ -11,6 +11,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { HomeComponent } from './componentes/home/home.component';
 import { PlatoComponent } from './componentes/plato/plato.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
+import { ALaCartaComponent } from './componentes/ALaCarta/ALaCarta.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
     HomeComponent,
     PlatoComponent,
     NavbarComponent,
+    ALaCartaComponent,
   ],
   imports: [
     BrowserModule,

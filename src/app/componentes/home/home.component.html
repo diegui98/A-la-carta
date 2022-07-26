@@ -68,29 +68,34 @@
         </div>
       </form>
       <ul>
-        <li *ngFor="let menuPlate of menuPlates; let i = index">
-          <app-plato [menuPlate]="menuPlate"></app-plato>
-          <button class="btn btn-danger" (click)="deletePlate(i)">
-            Eliminar
-          </button>
+        <li
+          class="plato-li bg-info border border-dark"
+          *ngFor="let menuPlate of menuPlates; let i = index"
+        >
+          <div class="container">
+            <app-plato [menuPlate]="menuPlate"></app-plato>
+            <button class="btn btn-danger" (click)="deletePlate(i)">
+              Eliminar
+            </button>
+          </div>
         </li>
       </ul>
     </div>
     <div class="col-sm-3">
       <div class="row">
-        <div class="col-12 menuExtraInfo">
+        <div class="col-12 bg-warning menuExtraInfo">
           <h4>Precio Total:</h4>
           *menuPrecioTotal*
         </div>
       </div>
       <div class="row">
-        <div class="col-12 menuExtraInfo">
+        <div class="col-12 bg-warning menuExtraInfo">
           <h4>Tiempo De Preparacion:</h4>
           *menuTiempoPreparacion*
         </div>
       </div>
       <div class="row">
-        <div class="col-12 menuExtraInfo">
+        <div class="col-12 bg-warning menuExtraInfo">
           <h4>Health Score:</h4>
           *menuHealthScore*
         </div>
