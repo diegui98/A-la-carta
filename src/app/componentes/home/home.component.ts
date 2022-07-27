@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   searchBtnStatus: boolean = false;
   searchRequested: boolean = false;
   selectedPlate!: number;
+  selectedPlateBoolean: boolean = false;
   form: FormGroup;
 
   constructor(
@@ -58,6 +59,7 @@ export class HomeComponent implements OnInit {
   }
 
   pushToMenuPlates(id: number) {
+    this.searchBtnStatus = !this.searchBtnStatus;
     let parametros = {
       apiKey: environment.apiKey,
     };
@@ -69,6 +71,7 @@ export class HomeComponent implements OnInit {
 
   setSelectedPlate(id: number) {
     this.selectedPlate = id;
+    this.selectedPlateBoolean = true;
   }
 
   deletePlate(i: number) {

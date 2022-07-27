@@ -2,7 +2,14 @@
   <h1>Restaurante A la carta!</h1>
   <div class="row">
     <div class="col-sm-9">
-      <button class="btn btn-success" (click)="addPlate()">
+      <button
+        class="btn"
+        [ngClass]="{
+          'btn-success': !searchBtnStatus,
+          'btn-warning': searchBtnStatus
+        }"
+        (click)="addPlate()"
+      >
         Agregar un Plato
       </button>
       <form
@@ -31,7 +38,7 @@
           </div>
         </div>
         <div>
-          <button type="submit" class="btn btn-info">Buscar</button>
+          <button type="submit" class="btn btn-info mb-2">Buscar</button>
         </div>
         <div *ngIf="searchRequested" class="container">
           <div class="row">
@@ -60,8 +67,10 @@
         </div>
         <div>
           <button
+            *ngIf="searchRequested"
             (click)="pushToMenuPlates(selectedPlate)"
-            class="btn btn-primary"
+            class="btn btn-primary mt-1"
+            [ngClass]="{ disabled: !selectedPlateBoolean }"
           >
             Agregar
           </button>
